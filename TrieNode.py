@@ -31,3 +31,20 @@ class Trie:
                 return False
             curr = curr.children[char]
         return True
+
+def run_operations(ops, args):
+    res = []
+    trie = None
+    for op, arg in zip(ops, args):
+        if op == "Trie":
+            trie = Trie()
+            res.append(None)          # constructor -> null
+        elif op == "insert":
+            trie.insert(arg[0])
+            res.append(None)          # insert -> null
+        elif op == "search":
+            res.append(trie.search(arg[0]))
+        elif op == "startsWith":
+            res.append(trie.startsWith(arg[0]))
+    return res
+
