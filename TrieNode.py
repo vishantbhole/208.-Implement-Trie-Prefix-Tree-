@@ -48,3 +48,13 @@ def run_operations(ops, args):
             res.append(trie.startsWith(arg[0]))
     return res
 
+def main():
+    ops = ["Trie", "insert", "search", "search", "startsWith", "insert", "search"]
+    args = [[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]
+
+    output = run_operations(ops, args)
+    print(output)   # [None, None, True, False, True, None, True]
+
+
+if __name__ == "__main__":
+    main()
