@@ -15,3 +15,11 @@ class Trie:
                 curr.children[char] = TrieNode()
             curr = curr.children[char]
         curr.end = True
+        
+    def search(self, word: str) -> bool:
+        curr = self.root
+        for char in word:
+            if char not in curr.children:
+                return False
+            curr = curr.children[char]
+        return curr.end
