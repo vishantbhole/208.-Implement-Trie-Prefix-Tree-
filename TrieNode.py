@@ -23,3 +23,11 @@ class Trie:
                 return False
             curr = curr.children[char]
         return curr.end
+        
+    def startsWith(self, prefix: str) -> bool:
+        curr = self.root
+        for char in prefix:
+            if char not in curr.children:
+                return False
+            curr = curr.children[char]
+        return True
